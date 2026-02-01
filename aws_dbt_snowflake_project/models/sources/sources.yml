@@ -1,0 +1,8 @@
+sources:
+  - name: staging # could name it anything else but putting shcema name is a good practice
+    database: AIRBNB  
+    schema: staging  
+    tables:
+      - name: listings
+      - name: bookings
+      - name: hosts

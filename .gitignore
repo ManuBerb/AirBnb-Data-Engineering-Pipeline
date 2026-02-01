@@ -7,4 +7,14 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+
+# dbt
+target/
+dbt_packages/
+logs/
+dbt.log
+profiles.yml
+
+# Editor
+.vscode/
