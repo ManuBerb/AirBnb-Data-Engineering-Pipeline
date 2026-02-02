@@ -18,4 +18,10 @@ models:
   aws_dbt_snowflake_project: # name of the project folder
     bronze: # name of the model (/models/demo/demo.sql) - refers to the folder name (2)
       +materialized: table # type of file created in snowflake (table, view, incremental, ephemeral)
-      +schema: BRONZE # schema name in snowflake
+      +schema: bronze # schema name in snowflake
+    silver:
+      +materialized: table
+      +schema: silver
+    gold:
+      +materialized: table
+      +schema: gold
