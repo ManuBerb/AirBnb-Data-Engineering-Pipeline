@@ -16,5 +16,6 @@ clean-targets:
 
 models:
   aws_dbt_snowflake_project: # name of the project folder
-    demo: # name of the model (/models/demo/demo.sql) - refers to the folder name (2)
+    bronze: # name of the model (/models/demo/demo.sql) - refers to the folder name (2)
       +materialized: table # type of file created in snowflake (table, view, incremental, ephemeral)
+      +schema: BRONZE # schema name in snowflake

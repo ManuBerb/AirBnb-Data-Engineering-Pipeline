@@ -1,0 +1,6 @@
+# this file has higher priority than dbt_project.yml for model configurations
+# this is just an example file 
+models:
+  - name: bronze_bookings
+    config:
+      materialized: table # if i  put view here it will override the dbt_project.yml setting of table
