@@ -1,6 +1,6 @@
 {% set congigs = [
     {
-        "table" : "AIRBNB.SILVER.SILVER_BOOKINGS",
+        "table" : "AIRBNB.silver.SILVER_BOOKINGS",
         "columns" : "SILVER_bookings.*",
         "alias" : "SILVER_bookings"
     },
@@ -18,3 +18,20 @@
     }
 ] %}
 
+
+
+SELECT 
+    {% for config in congigs %}
+        {{ config['columns'] }}{% if not loop.last %},{% endif %}
+    {% endfor %} --iterate over configs and output each item’s columns
+FROM
+    {% for config in congigs %}
+    {% if loop.first %}
+      {{ config['table'] }} AS {{ config['alias'] }}
+    {% else %}
+        LEFT JOIN {{ config['table'] }} AS {{ config['alias'] }}
+        ON {{ config['join_condition'] }}
+        {% endif %}
+        {% endfor %}
+
+--  uses first item as the base FROM table, and then left-joins each subsequent table using its join_condition

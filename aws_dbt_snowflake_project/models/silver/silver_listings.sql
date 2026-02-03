@@ -1,5 +1,6 @@
 SELECT 
     LISTING_ID,
+    HOST_ID,
     PROPERTY_TYPE,
     ROOM_TYPE,
     CITY,
